@@ -17,10 +17,14 @@ body {
   background-color: #6091C3;
 }
 
+first {
+  width: 100px
+}
+
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Cinzel Decorative', cursive;
+  font-family: 'Red Rose', cursive;
   color: #2a2a2a;
 }
 
@@ -39,7 +43,7 @@ h1 {
 h2 {
   font-size: 5rem;
   text-align: center;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 h3 {
