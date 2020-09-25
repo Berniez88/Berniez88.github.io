@@ -7,50 +7,53 @@
         <link href="styles.css" rel="stylesheet">
     </head>
     <body>
+    <div class="wrapper">
     <div class="container">
-        <h1>Bernie Zhong Lab 1</h1>
-        <form>
+        <h1>Bernie Zhong Lab 4</h1>
+        <form action="/api" method = "post">
             <ul class="flex-outer">
                 <li>
-                    <label for="First-name">First Name</label>
-                    <input type="text" id="First-name" >
+                    <label for="fname">First Name</label>
+                    <input name="fname" type="text" id="fname" >
                 </li>
                 <li>
-                    <label for="Last-name">Last Name</label>
-                    <input type="text" id="Last-name" >
+                    <label for="lname">Last Name</label>
+                    <input name ="lname" type="text" id="lname" >
                 </li>
                 <li>
-                    <label for="Email">Email</label>
-                    <input type="email" id="Email">
+                    <label for="email">Email</label>
+                    <input name="email" type="email" id="email">
                 </li>
                 <li>
-                    <label for="Phone">Phone</label>
-                    <input type="tel" id="Phone">
+                    <label for="phone">Phone</label>
+                    <input name="phone" type="tel" id="phone">
                 </li>
                 <li>
-                    <label for="Text File">Message</label>
-                    <textarea rows="4" col="32" id="Text File" placeholder="This is some default message text"></textarea>
+                    <label for="message">Text File</label>
+                    <textarea name= "message" rows="5" cols="33" id="message" placeholder="This is some default message text"></textarea>
                 </li>
-                <li>
+                <li>    
                     <p>Age</p>
                     <ul class="flex-inner">
                         <li>
-                            <input type="checkbox" id="eighteen-to-thirtyfive">
-                            <label for="eighteen-to-thirtyfive">18-35</label>
+                            <input name="age1" type="checkbox" id="age1">
+                            <label for="age1">18-35</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="thirtyfive-to-fifty">
-                            <label for="thirtyfive-to-fifty">35-50</label>
+                            <input name="age2" type="checkbox" id="age2">
+                            <label for="age2">35-50</label>
                         </li>
                         <li>
-                            <input type="checkbox" id="fifty-to-sixtyfive">
-                            <label for="fifty-to-sixtyfive">50-65</label>
+                            <input name="age3" type="checkbox" id="age3">
+                            <label for="age3">50-65</label>
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <button name="submit" type="submit" id="submit">Submit Form</button>
+                </li>
             </ul>
-            <button type="submit">Submit Form</button>
-        </form>
-    </body>
+        </form>  
     </div>
+</div>
 </html>
