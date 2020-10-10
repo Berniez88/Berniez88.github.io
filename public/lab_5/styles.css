@@ -63,7 +63,8 @@ body {
     justify-content: space-between;
   }
   
-  .flex-outer {
+  .flex-outer, .checkbox-list-label {
     max-width:800px;
     padding: 0 16px;
+
   }
