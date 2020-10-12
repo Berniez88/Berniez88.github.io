@@ -72,13 +72,13 @@
           fruits.textContent = "Fruits";
 
           const elements = document.querySelectorAll(".flex-inner label")
-          const fruitArray = ["kiwi", "dragonfruit", "pomelo"]
+          const fruitArray = ["kiwi", "mango", "apple"]
           elements.forEach((el, i) => {
               el.innerText = fruitArray[i];
           })
 
           const center = document.querySelector(".flex-outer");
-          center.style.margin = "0 auto";
+          center.style = "margin: 0 auto;";
      })
 }
 </script>
