@@ -3,17 +3,18 @@ function convertRestaurantsToCategories(restaurantList) {
   const categoryArray = [];
   const result = {}
   for (let i = 0; i < restaurantList.length; i += 1) {
-    categoryArray.push(restaurantList[i].category)
+    categoryArray.push(restaurantList[i].category);
   }
   for (let i = 0; i < categoryArray.length;i += 1){
     if (!result[categoryArray[i]]) {
-      result[categoryArray[i]] +=1;
+      result[categoryArray[i]] = 0;
     }
-    const reply = Object.keys(result).map((category))
-    y: result[category],
-    label: category
+    result[categoryArray[i]] +=1;
+  }
+    const reply = Object.keys(result).map((category) => ({
+    y: result[category], label: category
   }));
-  return list;
+  return reply;
 }
 
 function makeYourOptionsObject(datapointsFromRestaurantsList) {
@@ -69,10 +70,23 @@ function runThisWithResultsFromServer(jsonFromServer) {
   // Process your restaurants list
   // Make a configuration object for your chart
   // Instantiate your chart
+  CanvasJS.addColorSet("miscAdobe",
+                [//colorSet Array
+
+                "#0ced66",
+                "#49eb9f",
+                "#43deaf",
+                "#00ffb2",
+                "#1fffce"                
+                ]);
+  
   const reorganizedData = convertRestaurantsToCategories(jsonFromServer);
   const options = makeYourOptionsObject(reorganizedData);
-  const chart = new CanvasJS.Chart('chartContainer', options);
+  const chart = new CanvasJS.Chart('chartContainer', options);  
   chart.render();
+  $(window).on('resize', () => {
+    chart.render();
+  });
 }
 
 // Leave lines 52-67 alone; do your work in the functions above
