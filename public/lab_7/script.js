@@ -21,13 +21,17 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
   // set your chart configuration here!
   CanvasJS.addColorSet('customColorSet1', [
     // add an array of colors here https://canvasjs.com/docs/charts/chart-options/colorset/
-  ]);
-
+                "#fc0a0a",
+                "#53fc0a",
+                "#0be0d9",
+                "#c30fff",
+                "#ff03af"                
+                ]);
   return {
     animationEnabled: true,
     colorSet: 'customColorSet1',
     title: {
-      text: 'Food List'
+      text: 'Places To Eat Out In Future'
     },
     axisX: {
       interval: 1,
@@ -39,9 +43,10 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
       title: 'Types Of Food',
       labelFontSize: 12,
       scaleBreaks: {customBreaks: [{
-        starValue: 40,
-        endValue: 100,
+        startValue: 40,
+        endValue: 50,
         color: "purple"
+
       },
       {
         startValue: 85,
@@ -70,16 +75,6 @@ function runThisWithResultsFromServer(jsonFromServer) {
   // Process your restaurants list
   // Make a configuration object for your chart
   // Instantiate your chart
-  CanvasJS.addColorSet("miscAdobe",
-                [//colorSet Array
-
-                "#0ced66",
-                "#49eb9f",
-                "#43deaf",
-                "#00ffb2",
-                "#1fffce"                
-                ]);
-  
   const reorganizedData = convertRestaurantsToCategories(jsonFromServer);
   const options = makeYourOptionsObject(reorganizedData);
   const chart = new CanvasJS.Chart('chartContainer', options);  
