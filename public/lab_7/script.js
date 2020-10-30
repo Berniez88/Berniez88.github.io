@@ -2,7 +2,17 @@ function convertRestaurantsToCategories(restaurantList) {
   // process your restaurants here!
   const categoryArray = [];
   const result = {}
-  for (let i = 0)
+  for (let i = 0; i < restaurantList.length; i += 1) {
+    categoryArray.push(restaurantList[i].category)
+  }
+  for (let i = 0; i < categoryArray.length;i += 1){
+    if (!result[categoryArray[i]]) {
+      result[categoryArray[i]] +=1;
+    }
+    const reply = Object.keys(result).map((category))
+    y: result[category],
+    label: category
+  }));
   return list;
 }
 
@@ -16,7 +26,7 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
     animationEnabled: true,
     colorSet: 'customColorSet1',
     title: {
-      text: 'Change This Title'
+      text: 'Food List'
     },
     axisX: {
       interval: 1,
@@ -25,9 +35,24 @@ function makeYourOptionsObject(datapointsFromRestaurantsList) {
     axisY2: {
       interlacedColor: 'rgba(1,77,101,.2)',
       gridColor: 'rgba(1,77,101,.1)',
-      title: 'Change This Title',
+      title: 'Types Of Food',
       labelFontSize: 12,
-      scaleBreaks: {customBreaks: []} // Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
+      scaleBreaks: {customBreaks: [{
+        starValue: 40,
+        endValue: 100,
+        color: "purple"
+      },
+      {
+        startValue: 85,
+        endValue: 100,
+        color: "purple"
+      },
+      {
+        startValue: 140,
+        endValue: 175,
+        color: "purple"
+      }]
+     } // Add your scale breaks here https://canvasjs.com/docs/charts/chart-options/axisy/scale-breaks/custom-breaks/
     },
     data: [{
       type: 'bar',
